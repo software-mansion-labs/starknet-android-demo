@@ -44,6 +44,7 @@ class MainActivity : ComponentActivity() {
 fun Main() {
     // Create a variable that will store the address of our account
     // Replace "0x1234" with your own address
+    // By default, it can be found in `~/.starknet_accounts/starknet_open_zeppelin_accounts.json`
     val accountAddress = Felt.fromHex("0x1234")
 
     // Create a coroutine scope
