@@ -184,7 +184,8 @@ fun TransactionStatus(receipt: TransactionReceipt?, onClick: () -> Unit) {
 }
 
 suspend fun checkBalance(accountAddress: Felt): Uint256 {
-    // Create a provider
+    // Create a testnet provider
+    // Testnet is a separate StarkNet test network operating alongside StarkNet Mainnet
     val provider = GatewayProvider.makeTestnetProvider()
 
     // Create a call to StarkNet ERC-20 ETH contract
