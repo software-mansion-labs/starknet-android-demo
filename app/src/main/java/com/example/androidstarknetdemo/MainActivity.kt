@@ -223,6 +223,7 @@ suspend fun transferToken(
     val provider = GatewayProvider.makeTestnetProvider()
 
     // Create an account instance
+    // Replace placeholder values with your account details
     val address = Felt.fromHex("0x1234")
     val privateKey = Felt.fromHex("0x1111")
     val account = StandardAccount(address, privateKey, provider)
