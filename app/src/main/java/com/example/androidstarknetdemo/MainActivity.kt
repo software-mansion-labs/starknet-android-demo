@@ -103,7 +103,7 @@ fun Main() {
 
 
     Column(modifier = Modifier.padding(16.dp)) {
-        Text(text = balance.toString())
+        Text(text = "Current balance: ${balance.value} wei")
         Button(onClick = queryStarkNetOnClick) {
             Text(text = "Check Balance")
         }
