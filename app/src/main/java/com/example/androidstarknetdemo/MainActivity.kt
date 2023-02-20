@@ -80,7 +80,7 @@ fun Main() {
     }
 
 
-    val queryStarkNetOnClick: () -> Unit = {
+    val queryStarknetOnClick: () -> Unit = {
         scope.launch {
             balance = checkBalance(accountAddress)
         }
@@ -104,7 +104,7 @@ fun Main() {
 
     Column(modifier = Modifier.padding(16.dp)) {
         Text(text = "Current balance: ${balance.value} wei")
-        Button(onClick = queryStarkNetOnClick) {
+        Button(onClick = queryStarknetOnClick) {
             Text(text = "Check Balance")
         }
         if (transactionHash != Felt.ZERO) {
@@ -186,12 +186,12 @@ fun TransactionStatus(receipt: TransactionReceipt?, onClick: () -> Unit) {
 
 suspend fun checkBalance(accountAddress: Felt): Uint256 {
     // Create a testnet provider
-    // Testnet is a separate StarkNet test network operating alongside StarkNet Mainnet
+    // Testnet is a separate Starknet test network operating alongside Starknet Mainnet
     val provider = GatewayProvider.makeTestnetProvider()
 
-    // Create a call to StarkNet ERC-20 ETH contract
+    // Create a call to Starknet ERC-20 ETH contract
     val call = Call(
-        // `contractAddress` in this case is an address of ERC-20 ETH contract on StarkNet testnet
+        // `contractAddress` in this case is an address of ERC-20 ETH contract on Starknet testnet
         contractAddress = Felt.fromHex("0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7"),
 
         // `entrypoint` can be passed both as a string name and Felt value
@@ -212,7 +212,7 @@ suspend fun checkBalance(accountAddress: Felt): Uint256 {
     // this comes from `kotlinx-coroutines-jdk8`
     val balance: List<Felt> = future.await()
 
-    // balanceOf returns the result as Uint256 which in StarkNet is encoded as two Felts:
+    // balanceOf returns the result as Uint256 which in Starknet is encoded as two Felts:
     // high and low. We can convert it to more readable value using starknet-jvm
     val (low, high) = balance
     return Uint256(low = low, high = high)
