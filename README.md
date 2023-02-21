@@ -1,4 +1,4 @@
-# Example Android App With StarkNet-JVM and Jetpack Compose
+# Example Android App With Starknet-JVM and Jetpack Compose
 
 This repository contains example Android application created with [starknet-jvm](https://github.com/software-mansion/starknet-jvm) and Jetpack Compose
 for [the article on Medium](#).
